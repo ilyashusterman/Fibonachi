@@ -24,9 +24,23 @@ public class Fibonachi {
             int num = a;
             a= b+a;
             b = num;
-            numbers[counter]=a;
+            numbers[counter]=b;
             counter++;
         }
         return numbers;
+    }
+
+    public void printFibonachiList(){
+        int [] fibonachiList = this.generateList();
+        StringBuffer listNumbers = new StringBuffer();
+        String devider = ", ";
+        listNumbers.append("List : [");
+        for(int num : fibonachiList){
+            if (num==fibonachiList[fibonachiList.length-1])
+                devider="";
+            listNumbers.append(num+devider);
+        }
+        listNumbers.append("]");
+        System.out.println(listNumbers);
     }
 }

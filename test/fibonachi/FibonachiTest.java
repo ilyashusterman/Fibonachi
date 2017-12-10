@@ -10,6 +10,7 @@ import static org.junit.Assert.assertEquals;
 public class FibonachiTest {
   private Fibonachi fibonachiTester;
   private Fibonachi fibonachi(int lengthNumbers) {
+
     return new Fibonachi(lengthNumbers);
   }
 
@@ -18,6 +19,14 @@ public class FibonachiTest {
     this.fibonachiTester = fibonachi(9);
   }
 
+  @Test
+  public void testFirstAndSecondNumbers() throws Exception{
+    int [] fibonachiList = this.fibonachiTester.generateList();
+    int firstNumber = fibonachiList[0];
+    int secondNumber = fibonachiList[1];
+    assertEquals(firstNumber, 1);
+    assertEquals(secondNumber, 1);
+  }
   @Test
   public void checkLength() throws Exception{
     assertEquals(this.fibonachiTester.getLength(),9);
